@@ -7,5 +7,7 @@ export async function POST(request: Request) {
       }
       return new Response("Unauthorized", { status: 401 });
     })
-    .catch(() => new Response("Bad Request", { status: 400 }));
+    .catch((e) => {
+      new Response("Bad Request", { status: 400 })
+    });
 }
