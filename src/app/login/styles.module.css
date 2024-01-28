@@ -1,0 +1,76 @@
+.main {
+    margin: 20vh auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+    width: 40vw;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 80vw;
+    padding-bottom: 5%;
+  }
+}
+
+.errorMessage {
+    width: 85%;
+    padding: 5px;
+    color: red;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.heading {
+    font-size: 24px;
+}
+
+.description {
+    font-size: 16px;
+}
+
+.borderError {
+    border-color: red !important;
+}
+
+.form {
+    width: 70%;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInput {
+    width: 80%;
+    padding: 5px 20px 5px 20px;
+    font-size: 18px;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: 50px;
+    border: 1px solid gray;
+}
+
+.formSubmit {
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    /* margin-top: 1rem; */
+    background-color: rgb(155, 79, 227);
+}
+
+.formSubmit:hover {
+    cursor: pointer;
+}

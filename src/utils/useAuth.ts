@@ -9,7 +9,7 @@ interface LoginDetails {
 export const useAuth = () => {
     const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-    const [authToken, setAuthToken] = useState<string | null>(null);
+    const [authToken, setAuthToken] = useState<string | undefined>();
 
     useEffect(() => {
         const token = window.localStorage.getItem('token');
