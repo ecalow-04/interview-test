@@ -17,7 +17,7 @@ main {
     margin: auto;
     background-color: #ffffff;
     border-radius: 5px;
-    padding-top: 5%;
+    padding-top: 10px;
 }
 
 @media (max-width: 800px) {
@@ -27,12 +27,25 @@ main {
   }
 }
 
+.error-message {
+    width: 85%;
+    padding: 5px;
+    color: red;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px
+}
+
 .heading {
     font-size: 24px;
 }
 
 .description {
     font-size: 16px;
+}
+
+.border-error {
+    border-color: red !important;
 }
 
 #login-form {
@@ -59,7 +72,7 @@ main {
     padding: 10px;
     border: none;
     border-radius: 10px;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     background-color: rgb(155, 79, 227);
 }
 
