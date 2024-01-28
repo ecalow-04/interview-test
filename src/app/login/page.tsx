@@ -35,8 +35,8 @@ export default function Login() {
         } else if (loginStatus == 401) {
             // unauthorized
             setError('Incorrect username or password');
-        } else if (loginStatus == 400) {
-            // bad request
+        } else {
+            setError('Sorry, something went wrong.')
         }
     };
 

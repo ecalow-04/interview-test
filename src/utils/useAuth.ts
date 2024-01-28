@@ -48,5 +48,5 @@ export const useAuth = () => {
         router.push('/');
     }
 
-    return { login, logout, authToken }
+    return { isLoggedIn, login, logout, authToken }
 }
