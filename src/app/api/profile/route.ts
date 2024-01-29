@@ -6,14 +6,21 @@ interface Profile {
 }
 
 const profiles: Array<Profile> = [
-    { username: 'admin', name: 'Walter White', email: 'walterhwhite@gmail.com', token: '123' }
-]
+    {
+        username: 'admin',
+        name: 'Walter White',
+        email: 'walterhwhite@gmail.com',
+        token: '123'
+    }
+];
 
 export async function GET(request: Request) {
-    const authToken = request.headers?.get('Authorization')?.replace('Bearer ', '')
-    if (!authToken) return new Response("Unauthorized", { status: 401 });
-    
-    const profile = profiles.find(p => p.token === authToken)
+    const authToken = request.headers
+        ?.get('Authorization')
+        ?.replace('Bearer ', '');
+    if (!authToken) return new Response('Unauthorized', { status: 401 });
+
+    const profile = profiles.find((p) => p.token === authToken);
 
     if (profile) {
         const data = { ...profile };

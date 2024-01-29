@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface LoginDetails {
@@ -24,29 +24,29 @@ export const useAuth = () => {
     });
 
     const validateToken = (token: string) => {
-        if (token.length == 3) return true
-        return false
-    }
+        if (token.length == 3) return true;
+        return false;
+    };
 
     const login = async (loginDetails: LoginDetails) => {
         const response = await fetch('/api/login', {
             method: 'POST',
-            body: JSON.stringify(loginDetails),
+            body: JSON.stringify(loginDetails)
         });
 
         if (response.status == 200) {
             const data = await response.json();
 
-            window.localStorage.setItem('token', data.token)
+            window.localStorage.setItem('token', data.token);
         }
 
         return response.status;
-    }
+    };
 
     const logout = () => {
         window.localStorage.removeItem('token');
         router.push('/');
-    }
+    };
 
-    return { isLoggedIn, login, logout, authToken }
-}
+    return { isLoggedIn, login, logout, authToken };
+};
