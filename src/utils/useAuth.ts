@@ -45,7 +45,7 @@ export const useAuth = () => {
 
     const logout = () => {
         window.localStorage.removeItem('token');
-        router.push('/');
+        router.push('/login');
     };
 
     return { isLoggedIn, login, logout, authToken };

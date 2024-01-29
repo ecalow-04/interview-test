@@ -59,7 +59,8 @@ export default function Login() {
                         type="text"
                         placeholder="Username"
                         className={
-                            styles.formInput + (error ? styles.borderError : '')
+                            styles.formInput +
+                            (error ? ` ${styles.borderError}` : '')
                         }
                         onChange={(e) => {
                             setError(null);
@@ -72,7 +73,8 @@ export default function Login() {
                         type="password"
                         placeholder="Password"
                         className={
-                            styles.formInput + (error ? styles.borderError : '')
+                            styles.formInput +
+                            (error ? ` ${styles.borderError}` : '')
                         }
                         onChange={(e) => {
                             setError(null);
