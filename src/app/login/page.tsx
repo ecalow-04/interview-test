@@ -7,14 +7,14 @@ import { useAuth } from '../../utils/useAuth';
 import { useEffect, useState } from 'react';
 
 export default function Login() {
-    const { login, authToken } = useAuth();
+    const { login, isLoggedIn } = useAuth();
     const [error, setError] = useState<string | null>(null);
     const [usernameInput, setUsernameInput] = useState<string>('');
     const [passwordInput, setPasswordInput] = useState<string>('');
     const router = useRouter();
 
     useEffect(() => {
-        if (authToken) {
+        if (isLoggedIn) {
             router.push('/profile');
         }
     });

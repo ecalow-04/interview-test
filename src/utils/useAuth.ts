@@ -9,17 +9,18 @@ interface LoginDetails {
 export const useAuth = () => {
     const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-    const [authToken, setAuthToken] = useState<string | undefined>();
+    const [authToken, setAuthToken] = useState<string | null>(null);
 
     useEffect(() => {
         const token = window.localStorage.getItem('token');
-        if (!authToken) {
-            if (token && validateToken(token)) {
+
+        if (token && validateToken(token)) {
+            if (!authToken) {
                 setAuthToken(token);
                 setIsLoggedIn(true);
-            } else {
-                logout();
             }
+        } else {
+            logout();
         }
     });
 
@@ -45,6 +46,8 @@ export const useAuth = () => {
 
     const logout = () => {
         window.localStorage.removeItem('token');
+        setIsLoggedIn(false);
+        setAuthToken(null);
         router.push('/login');
     };
 
