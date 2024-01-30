@@ -16,6 +16,10 @@ export default function Profile() {
     const [profile, setProfile] = useState<Profile>();
 
     useEffect(() => {
+        // Determine if the auth hook has loaded but we haven't fetched the profile yet
+
+        // auth hook handles if your token is missing/invalid and redirects to /login,
+        // isLoggedIn check is just so we don't try to retrieve the profile without authToken set.
         if (isLoggedIn && !profile && !profileLoading) {
             setProfileLoading(true);
             requestProfile();

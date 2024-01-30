@@ -14,6 +14,7 @@ export const useAuth = () => {
     useEffect(() => {
         const token = window.localStorage.getItem('token');
 
+        // If token exists and it is valid, check if we have it set in state
         if (token && validateToken(token)) {
             if (!authToken) {
                 setAuthToken(token);
@@ -24,6 +25,7 @@ export const useAuth = () => {
         }
     });
 
+    // Only real way to validate our hardcoded token, here is where we would check expiry etc if it was JWT
     const validateToken = (token: string) => {
         if (token.length == 3) return true;
         return false;
