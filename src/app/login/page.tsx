@@ -53,11 +53,14 @@ export default function Login() {
                     {error && (
                         <div className={styles.errorMessage}>{error}</div>
                     )}
+                    <label htmlFor="username" className={styles.formLabel}>
+                        Username:
+                    </label>
                     <input
                         id="username"
                         name="username"
                         type="text"
-                        placeholder="Username"
+                        placeholder="Enter Username"
                         className={
                             styles.formInput +
                             (error ? ` ${styles.borderError}` : '')
@@ -67,11 +70,14 @@ export default function Login() {
                             setUsernameInput(e.target.value);
                         }}
                     />
+                    <label htmlFor="password" className={styles.formLabel}>
+                        Password:
+                    </label>
                     <input
                         id="password"
                         name="password"
                         type="password"
-                        placeholder="Password"
+                        placeholder="Enter Password"
                         className={
                             styles.formInput +
                             (error ? ` ${styles.borderError}` : '')

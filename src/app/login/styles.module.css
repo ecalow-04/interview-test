@@ -53,6 +53,12 @@
     align-items: center;
 }
 
+.formLabel {
+    font-size: 14px;
+    align-self: start;
+    margin-left: 1rem;
+}
+
 .formInput {
     width: 80%;
     padding: 5px 20px 5px 20px;
